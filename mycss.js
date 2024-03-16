@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const likeBtn = document.createElement('span');
     likeBtn.classList.add('like-btn');
-    likeBtn.textContent = '👍 Like';
+    likeBtn.textContent = '❤ Like';
     likeBtn.addEventListener('click', function () {
       toggleLike(postDiv);
     });
