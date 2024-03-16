@@ -1,0 +1,219 @@
+main { box-sizing: border-box; 
+}
+*, *::before, *::after { box-sizing: inherit; }
+
+#Sign{
+
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+body {
+    margin: 0;
+    padding: 0; 
+    align-items: center;
+    display:block;
+    font-family: "Open Sans", sans-serif;
+    background: #5F8575;
+    justify-content: center;
+    height: 300px;
+    
+}
+  
+h1, h2{
+    margin: 0 ;
+    padding: 30px 0 0 0 ;
+    color:#D27D2D;    
+}
+
+
+nav > ul {
+    background-color: #E1C16E;
+    list-style: none;   /* 移除項目符號 */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: inherit; /* 移除超連結顏色 */
+    display: block; /* 讓 <a> 填滿 <li> */
+    font-size: 1.2rem;
+    padding: 10px;
+    text-decoration: none;  /* 移除超連結底線 */
+}
+
+/* 滑鼠移到 <a> 時變成深底淺色 */
+nav li{
+    background-color:#36454F;
+    color: #E1C16E;
+}
+
+nav li:hover {
+    background-color:#5F8575;
+    color: white;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.inline-block-nav {
+    text-align: center;
+    font-size: 0;   /* 移除 <li> 之間的空隙 */
+    flex: auto;
+    background-color: #36454F;
+   
+}
+
+.inline-block-nav > li {
+    display: inline-block;
+}
+.inline-block-nav:hover{
+
+    background-color: #5F8575;
+      color: #E1C16E;
+  }
+/*直列導覽列*/
+.container {
+    display: flex;
+}
+
+#toggle-button {
+    font-size: 40px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-right: 0px;
+    z-index: 2; /* Ensure button is on top */
+    color:#F9F6EE;
+    position: relative;
+   
+}
+
+#sidebar {
+    width: 550px;
+    height: 100vh;
+    background-color:#E1C16E;
+    color: #fff;
+    padding-top: 20px;
+    transform: translateX(-250px);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1; /* Ensure sidebar is below button */
+    display:inline-block;
+}
+
+#sidebar.open {
+    transform: translateX(0);
+}
+
+#sidebar ul{
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul > .class {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #E1C16E;    
+}
+
+#sidebar a:hover {
+    background-color:#5F8575;
+}
+
+#content {
+    position:relative;
+    width:100vw;
+    height:100dvh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+   
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+    transform: translateX(-100px);
+    text-align: center; 
+    margin-top: 80px;
+}
+button{
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #36454F;
+    padding: 15px 0;
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/*---------旗子-------*/
+.MoveBut{
+    width: 200px;
+    height: 100px;
+    margin-right:-100px;
+    
+  }
+  
+.MoveBut:hover {
+    transform: translateX(-100px);
+    width: 260px;
+    transition: transform 1s ease-out;
+    z-index: 1; /* Ensure sidebar is below button */
+    
+  }
+  #FiveFlages{
+  
+    float: right;
+    width: 20%;
+    margin-left: 200px;
+    width: auto;
+  }
+  .station{
+    height: 150px;
+    width:350px;
+    float: right;
+    border-radius :40px;
+    padding: 10px 10px 10px 20px;
+}
+.TibImg{
+    height: 500px;
+    width:600px;
+    display:inline-block;
+    text-align: center; 
+    justify-content: center;
+}
+/*------*/
+.MainB{
+      font-size: 80px;
+      color: azure;
+      margin-top: 50px;
+      display: block;
+}
+.Main{
+
+    margin-top: 100px;
+
+}
+.unCool{
+    
+    border: 9px;
+    padding-top: 1px;
+    background: linear-gradient(to right, transparent, #b6b6b6, transparent);
+    width: 500px;
+}
+.Aboutfooter {
+    text-align: center;
+    
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 500px;
+    position:absolute;
+    margin-top: 800px;
+    
+  }

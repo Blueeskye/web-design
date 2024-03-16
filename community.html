@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community</title>
+  <link href= "main.css" rel = "stylesheet">
+  
+</head>
+<body>
+    <button id="toggle-button">&#9776;</button>
+
+    <div class="container">
+        <nav id="sidebar">
+          <ul>
+            <li id="home" style="display: block">
+              <a href="myCss.html" onclick="switchPage()">Home</a>
+            </li>
+            <li id="SignIn">
+              <a href="SignIn.html" onclick="switchPage()">SignIn</a>
+            </li>
+            <li id="tutor">
+              <a href="tutor.html" onclick="switchPage()">Tutor</a>
+            </li>
+            <li id="community">
+              <a href="community.html" onclick="switchPage()">Community</a>
+            </li>
+            <li id="contact">
+              <a href="contact.html" onclick="switchPage()">Contact</a>
+              </li>
+            
+            <li id="about">
+              <a href="about.html" onclick="switchPage()">About</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="content">
+          <h1 style="color: #EADDCA;">Cnmmunity</h1>
+          <hr class="Cool">
+          <p></p>
+          <div id="apple2">
+            <textarea id="postInput" placeholder="分享個甚麼..." class="comment-input" rows="4"></textarea>
+            <input type="file" id="imageInput" class="image-input" style="color: aliceblue;"></input>
+            <div id="posts"></div>
+          </div>  
+       </div>
+       
+    </div>     
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const postInput = document.getElementById('postInput');
+  const imageInput = document.getElementById('imageInput');
+  const postsContainer = document.getElementById('posts');
+
+  postInput.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      const postText = postInput.value.trim();
+      const imageDataUrl = imageInput.files.length > 0 ? getImageDataUrl(imageInput.files[0]) : null;
+
+      if (postText !== '' || imageDataUrl !== null) {
+        createPost(postText, imageDataUrl);
+        postInput.value = '';
+        imageInput.value = '';
+      }
+    }
+  });
+
+  function getImageDataUrl(file) {
+    const reader = new FileReader();
+    return new Promise((resolve) => {
+      reader.onloadend = function () {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function createPost(text, imageDataUrl) {
+    const postDiv = document.createElement('div');
+    postDiv.classList.add('posts');
+
+    if (text !== '') {
+      const postContent = document.createElement('p');
+      postContent.textContent = text;
+      postDiv.appendChild(postContent);
+    }
+
+    if (imageDataUrl !== null) {
+      const postImage = document.createElement('img');
+      postImage.src = imageDataUrl;
+      postDiv.appendChild(postImage);
+    }
+
+    const postActions = document.createElement('div');
+    postActions.classList.add('post-actions');
+
+    const likeBtn = document.createElement('span');
+    likeBtn.classList.add('like-btn');
+    likeBtn.textContent = '❤ Like';
+    likeBtn.addEventListener('click', function () {
+      toggleLike(postDiv);
+    });
+    postActions.appendChild(likeBtn);
+
+    const likeCount = document.createElement('span');
+    likeCount.classList.add('like-count');
+    likeCount.textContent = '0';
+    postActions.appendChild(likeCount);
+
+    postDiv.appendChild(postActions);
+
+    const commentsContainer = document.createElement('div');
+    commentsContainer.classList.add('comments');
+
+    const commentInput = document.createElement('input');
+    commentInput.classList.add('comment-input');
+    commentInput.placeholder = '說點甚麼吧...';
+
+    const commentBtn = document.createElement('button');
+    commentBtn.classList.add('comment-btn');
+    commentBtn.textContent = '回答';
+    commentBtn.addEventListener('click', function () {
+      addComment(postDiv, commentInput.value);
+      commentInput.value = '';
+    });
+
+    commentsContainer.appendChild(commentInput);
+    commentsContainer.appendChild(commentBtn);
+
+    postDiv.appendChild(commentsContainer);
+
+    postsContainer.insertBefore(postDiv, postsContainer.firstChild);
+  }
+
+  function toggleLike(postDiv) {
+    const likeBtn = postDiv.querySelector('.like-btn');
+    const likeCount = postDiv.querySelector('.like-count');
+    const isLiked = postDiv.classList.toggle('liked');
+    const currentCount = parseInt(likeCount.textContent);
+
+    likeCount.textContent = isLiked ? (currentCount + 1).toString() : (currentCount - 1).toString();
+  }
+
+  function addComment(postDiv, commentText) {
+    const commentsContainer = postDiv.querySelector('.comments');
+
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('comment');
+    commentDiv.textContent = commentText;
+
+    commentsContainer.appendChild(commentDiv);
+  }
+});
+// 直向導覽列
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('toggle-button');
+  const sidebar = document.getElementById('sidebar');
+  const content = document.getElementById('content');
+
+  toggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      const isSidebarOpen = sidebar.classList.contains('open');
+      content.style.marginLeft = isSidebarOpen ? '250px' : '0';
+  });
+});
+
+</script>
+
+</body>
+</html>

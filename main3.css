@@ -1,0 +1,244 @@
+main { box-sizing: border-box; 
+}
+*, *::before, *::after { box-sizing: inherit; }
+
+#Sign{
+
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+body {
+    margin: 0;
+    padding: 0; 
+    align-items: center;
+    display:block;
+    font-family: "Open Sans", sans-serif;
+    background: #040437;
+    justify-content: center;
+    height: 21000vh;
+}
+  
+h1, h2 {
+    margin: 0 ;
+    padding: 30px 0 0 0 ;
+    color:rgb(220, 166, 166)
+    
+}
+
+nav > ul {
+    background-color: rgb(179, 178, 178);
+    list-style: none;   /* 移除項目符號 */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: inherit; /* 移除超連結顏色 */
+    display: block; /* 讓 <a> 填滿 <li> */
+    font-size: 1.2rem;
+    padding: 10px;
+    text-decoration: none;  /* 移除超連結底線 */
+}
+
+/* 滑鼠移到 <a> 時變成深底淺色 */
+nav li:hover {
+    background-color: rgb(115, 115, 115);
+    color: white;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.inline-block-nav {
+    text-align: center;
+    font-size: 0;   /* 移除 <li> 之間的空隙 */
+    flex: auto;
+}
+
+.inline-block-nav > li {
+    display: inline-block;
+}
+
+/*直列導覽列*/
+.container {
+    display: flex;
+}
+
+#toggle-button {
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-right: 0px;
+    z-index: 2; /* Ensure button is on top */
+    color: rgb(129, 245, 245);
+    position: relative;
+   
+}
+
+#sidebar {
+    width: 330px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+    transform: translateX(-250px);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1; /* Ensure sidebar is below button */
+    display:inline-block
+}
+
+#sidebar.open {
+    transform: translateX(0);
+}
+
+#sidebar ul{
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul > .class {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #555;
+}
+
+#sidebar a:hover {
+    background-color: #555;
+}
+
+#content {
+    position:relative;
+    width:100vw;
+    height:100dvh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+    transform: translateX(-100px);
+    text-align: center;  
+    margin-top: 30px;
+}
+
+.border{
+    border-radius :20px;
+    border:1px solid rgb(112, 96, 4);
+    background-color: rgb(252, 252, 252);
+    padding: 10px 20px 10px 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.205);
+    text-align: right;
+}
+
+.border:hover{
+
+    background-color: rgb(255, 255, 255);
+    transform:scale(1.2);
+    transition: 2s; 
+}
+
+.Cool{
+    border: 1.5px solid  gray;
+    width: 90px;
+
+}
+.unCool{
+    
+        border: 9px;
+        padding-top: 1px;
+        background: linear-gradient(to right, transparent, #b6b6b6, transparent);
+        width: 500px;
+}
+.station{
+    height:100px;
+    width:300px;
+    float: left;
+    border-radius :40px;
+    padding: 10px 10px 10px 20px;
+}
+
+
+/* 整段有問題 */
+
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin-top: 10px;
+    
+}
+/* 到這 */
+
+  
+  
+  
+ /*--------------community-------*/
+ 
+/*----------tutor------*/
+
+
+/* ------signin-------- */
+      
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.MoveBut{
+
+    width: 200px;
+    height: 100px;
+    margin-right:-100px;
+    
+  }
+  
+  .MoveBut:hover {
+    transform: translateX(-100px);
+   
+    transition: transform 1s ease-out;
+    z-index: 1; /* Ensure sidebar is below button */
+    display:inline-block
+  }
+
+/*-----------mycss.html---------*/
+
+#FiveFlages{
+  
+  float: right;
+  width: 20%;
+  margin-left: 2000px;
+  
+}
+/*.MoveBut{
+
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+  
+}
+
+.MoveBut:hover {
+  transform: translateX(-200px);
+  width: 200px;
+  transition: transform 3s ease-out;
+  z-index: 1; // Ensure sidebar is below button 
+  display:inline-block
+}*/

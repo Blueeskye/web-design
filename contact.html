@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact</title>
+    <link href="main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <script src="mycss.js"></script>
+  </head>
+  
+    <button id="toggle-button">&#9776;</button>
+
+    <div class="container">
+        <nav id="sidebar">
+            <ul>
+              <li id="home" style="display: block">
+                <a href="myCss.html" onclick="switchPage()">Home</a>
+              </li>
+              <li id="SignIn">
+                <a href="SignIn.html" onclick="switchPage()">SignIn</a>
+              </li>
+              <li id="tutor">
+                <a href="tutor.html" onclick="switchPage()">Tutor</a>
+              </li>
+              <li id="community">
+                <a href="community.html" onclick="switchPage()">Community</a>
+              </li>
+              <li id="contact">
+                <a href="contact.html" onclick="switchPage()">Contact</a>
+                </li>
+              
+              <li id="about">
+                <a href="about.html" onclick="switchPage()">About</a>
+              </li>
+            </ul>
+         </nav>
+
+       <div id="content">
+           <p style="padding: 1000px 0 0 0 ;"></p>
+           <h1  style="color: #EADDCA;">Contact</h1>
+           <hr class = "Cool">       
+                        
+                  <h3  style="color: blanchedalmond;">
+                    歡迎與我聯繫!~<br>
+                    歡迎提供任何建議與指教~!<br>
+                    有任何疑問也歡迎諮詢~!<br>
+                   </h3>
+              <hr class = "unCool">
+              <a href = "https://line.me/ti/p/o4c_UPv2vw"><img src = "LineIcon.png" width="50" height="50" alt="Where are you now?"></a>
+              <a href = "https://u.wechat.com/kFkB5mCd_GROb3NY2UH5G9Q"><img src = "6.jpg" width="50" height="50" alt="Where are you now?" ></a>
+
+         
+
+                <div class = "form">
+
+                  <h1>Contact form</h1>
+                  <p>
+                  Required imformation                
+                  </p>
+  
+              <section>
+                <p>
+                  <label for="name">
+                    <strong>Name:</strong>
+                    <strong><abbr title="required">*</abbr></strong>
+                  </label>
+                  <input type="text" id="name" name="username" />
+                </p>
+                <p>
+                  <label for="mail">
+                    
+                    <strong>E-mail:</strong>
+                  </label>
+                    <input type="email" id="mail" name="usermail" />
+                </p>
+                <p>
+                  <label for="card">
+                    <strong>Country:</strong>
+                    <p></p>
+                  </label>
+                  <select id="card" name="country" >
+                    <option class="ContOpt" value="Taiwan">Taiwan</option>
+                    <option class="ContOpt" value="Tibet">Tibet</option>
+                    <option class="ContOpt" value="China">China</option>
+                    <option class="ContOpt" value="the USA">the USA</option>
+                  </select>
+                </p>
+
+                
+              </section>
+  
+              <section>
+              <h2>Opinion</h2>
+              
+              <p></p>
+               
+                <textarea class="ContOpt"  placeholder="Write something.." style="height:200px; width: 400px; border-radius: 7px;"></textarea>
+           
+              </section>
+  
+              <p>
+                <button type="submit" class ="ContButton" onclick = "changebackground(),  doSomething(), redirectToMyCss()">
+                submit</button>
+              </p>
+  
+             </form>
+            </div>
+        </div> 
+    </div>
+  
+</html>

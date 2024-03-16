@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tutor</title>
+    <link href="main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <script src="mycss.js"></script>
+  </head>
+  
+    <button id="toggle-button">&#9776;</button>
+
+    <!-- 修正後的Sidebar -->
+    <div class="container">
+        <nav id="sidebar">
+          <ul>
+            <li id="home" style="display: block">
+              <a href="myCss.html" onclick="switchPage()">Home</a>
+            </li>
+            <li id="SignIn">
+              <a href="SignIn.html" onclick="switchPage()">SignIn</a>
+            </li>
+            <li id="tutor">
+              <a href="tutor.html" onclick="switchPage()">Tutor</a>
+            </li>
+            <li id="community">
+              <a href="community.html" onclick="switchPage()">Community</a>
+            </li>
+            <li id="contact">
+              <a href="contact.html" onclick="switchPage()">Contact</a>
+              </li>
+            
+            <li id="about">
+              <a href="about.html" onclick="switchPage()">About</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <h1 id="tutorh1" style="color: #EADDCA;">Tutor</h1>
+        
+        <div id="content">
+            <div id="apple">
+    
+                  <div class="teacher-card" id="teacher1">
+                    <h2 id="teacher-name1">數學家教</h2>
+                    <p id="teacher-intro1">資深教師，提供u質高中數學家教服務。</p>
+                    <div id="contact-form1">
+                      <input type="text" id="input-name1" placeholder="輸入老師名稱">
+                      <textarea id="input-intro1" placeholder="輸入老師介紹"></textarea>
+                      <button onclick="updateTeacher('teacher1')" style="color:#fff;background-color: #5F8575;border:none;padding: 5px;font-size: 20px;">更新資訊</button>
+                      
+                    </div>
+                    <div class="student-reply">
+                      <h3>學生回覆</h3>
+                      <textarea placeholder="輸入回覆訊息"></textarea>
+                      <button onclick="sendReply('teacher1')" style="color:#fff;background-color: #5F8575;border:none;padding: 5px;font-size: 20px;">發送回覆</button>
+                      <div class="reply-history" id="reply-history1">
+                        <h4>回覆紀錄</h4>
+                        <!-- 學生回覆的歷史紀錄 -->
+                      </div>
+                   </div>
+                 </div>   
+           
+        
+              <div class="teacher-card" id="teacher2">
+                <h2 id="teacher-name2">英文家教</h2>
+                <p id="teacher-intro2">多年經驗，提供初級到高級英文教學。</p>
+                  <div id="contact-form2">
+                    <input type="text" id="input-name2" placeholder="輸入老師名稱">
+                    <textarea id="input-intro2" placeholder="輸入老師介紹"></textarea>
+                    <button onclick="updateTeacher('teacher2')" style="color:#fff;background-color: #5F8575;border:none;padding: 5px;font-size: 20px;">更新資訊</button>           
+                  </div>
+
+
+                        <div class="student-reply">
+                          <h3>學生回覆</h3>
+                          <textarea placeholder="輸入回覆訊息"></textarea>
+                          <button onclick="sendReply('teacher2')" style="color:#fff;background-color: #5F8575;border:none;padding: 5px;font-size: 20px;">發送回覆</button>
+                        <div class="reply-history" id="reply-history2"></div>
+                            <h4>回覆紀錄</h4>
+                        <!-- 學生回覆的歷史紀錄 -->
+                   </div>
+               </div>
+        </div>                        
+    </div>
+
+  
+</html>
